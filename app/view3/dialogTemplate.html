@@ -1,11 +1,37 @@
 <div>
     <md-dialog aria-label="Form dialog"> <!--TODO: Complete and test form submission-->
-        <md-dialog-content>
-            <md-input ng-model=""></md-input>
-        </md-dialog-content>
-        <md-dialog-actions>
-            <md-button ng-click="closeDialog()" class="md-primary">Close Dialog</md-button>
-            <md-button ng-click="submitDialog()" class="md-primary">Submit</md-button>
-        </md-dialog-actions>
+        <form name="dataForm" novalidate ng-submit="frmCtrl.save()">
+            <md-toolbar>
+                <div class="md-toolbar-tools">
+                    <h2>Title</h2>
+                    <span flex></span>
+                    <md-button class="md-icon-button" ng-click="frmCtrl.closeDialog()">
+                        <md-icon md-font-set="material-icons" aria-label="Close dialog">close</md-icon>
+                    </md-button>
+                </div>
+            </md-toolbar>
+            <md-dialog-content>
+
+                <!-- NAME -->
+                <md-input-container class="md-block">
+                    <label>Client Name</label>
+                    <input md-maxlength="255" required name="name" ng-model="frmCtrl.data.name"
+                           class="dialog-close">
+                    <div ng-messages="clientForm.name.$error">
+                        <div ng-message="required">This is required.</div>
+                        <div ng-message="md-maxlength">The name has to be less than 255 characters long.</div>
+                    </div>
+                </md-input-container>
+
+
+            </md-dialog-content>
+            <md-dialog-actions>
+                <md-button ng-click="frmCtrl.closeDialog()" class="md-primary" type="button">Close Dialog</md-button>
+                <!--<md-button ng-click="submitDialog()" class="md-primary">Submit</md-button>-->
+                <md-button ng-disabled="dataForm.$invalid" type="submit" class="md-primary">
+                    Save
+                </md-button>
+            </md-dialog-actions>
+        </form>
     </md-dialog>
 </div>
