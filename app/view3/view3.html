@@ -1,0 +1,26 @@
+<div>
+
+    <div ng-controller="View3Ctrl">
+        <div>
+            <md-button ng-click="showAlert()" class="md-raised md-warn">
+                Employee Alert!
+            </md-button>
+        </div>
+        <div>
+            <md-button ng-click="showDialog($event)" class="md-raised">
+                Custom Dialog
+            </md-button>
+        </div>
+        <div>
+            <md-button ng-click="closeAlert()" ng-disabled="!hasAlert()" class="md-raised">
+                Close Alert
+            </md-button>
+        </div>
+        <div>
+            <md-button ng-click="showFormDialog($event)" class="md-raised md-primary">
+                Form Dialog
+            </md-button>
+        </div>
+    </div>
+
+</div>
