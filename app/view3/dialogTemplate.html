@@ -23,6 +23,28 @@
                     </div>
                 </md-input-container>
 
+                <!-- ID -->
+                <md-input-container class="md-block">
+                    <label>Client Id</label>
+                    <input md-maxlength="5" required name="id" ng-model="frmCtrl.data.id"
+                           class="dialog-close">
+                    <div ng-messages="clientForm.name.$error">
+                        <div ng-message="required">This is required.</div>
+                        <div ng-message="md-maxlength">The name has to be less than 5 characters long.</div>
+                    </div>
+                </md-input-container>
+
+                <!-- Rooms -->
+                <md-input-container class="md-block">
+                    <label>Number of Rooms</label>
+                    <input md-maxlength="2" required name="rooms" ng-model="frmCtrl.data.moreData.details.rooms"
+                           class="dialog-close">
+                    <div ng-messages="clientForm.name.$error">
+                        <div ng-message="required">This is required.</div>
+                        <div ng-message="md-maxlength">The name has to be less than 2 characters long.</div>
+                    </div>
+                </md-input-container>
+
 
             </md-dialog-content>
             <md-dialog-actions>
