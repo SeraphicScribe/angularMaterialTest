@@ -3,7 +3,7 @@
  */
 'use strict';
 
-angular.module('myApp.view3', ['ngRoute', 'ngMaterial'])
+angular.module('myApp.view3', ['ngRoute', 'ngMaterial', 'myservice'])
 
     .config(['$routeProvider', function ($routeProvider) {
         $routeProvider.when('/view3', {
@@ -82,29 +82,40 @@ angular.module('myApp.view3', ['ngRoute', 'ngMaterial'])
                     items: $scope.items,
                     alt: $scope.data['alt']
                 },
-                controller: 'formController as frmCtrl'
+                controller: 'formController as frmCtrl',
+                preserveScope: true
             });
         }
 
     }])
-    .controller('formController', ['$scope', '$mdDialog', function ($scope, $mdDialog, items, alt) {
+    .controller('formController', ['$scope', '$mdDialog', 'myserviceService', function ($scope, $mdDialog, myserviceService, items, alt) {
         var vm = this;
         vm.data = {
             id: 0,
-            name: 'xxx'
+            name: 'xxx',
+            moreData: {
+                details: {
+                    rooms: 2
+                }
+            }
         };
         $scope.items = items;
         $scope.alt = alt;
+
+        $scope.formData = {};
 
         vm.closeDialog = function () {
             $mdDialog.hide();
             console.log("Dialog Closed");
         };
         vm.submitDialog = function () {
-            console.log("Dialog Submitted : " + vm.data.name);
+            myserviceService.sendMessage($scope.formData);
+            console.log("Dialog Submitted : " + $scope.formData);
+
         };
 
         vm.save = function () {
+            myserviceService.sendMessage(vm.data);
             console.log('Save triggered : ' + vm.data.name);
         };
 

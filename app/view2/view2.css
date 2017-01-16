@@ -1,0 +1,26 @@
+.scrollable-nav-content {
+    position: absolute;
+    top: 136px;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    overflow: auto;
+}
+
+.set-icon-fab {
+    font-size: 1.8rem;
+}
+
+md-toolbar .md-toolbar-tools h1 {
+    font-size: 1.250em;
+    font-weight: 400;
+    max-height: 64px;
+}
+
+.md-sidenav-left {
+    min-height: 100%;
+}
+
+.ng-scope {
+    /*height: 100%;*/
+}

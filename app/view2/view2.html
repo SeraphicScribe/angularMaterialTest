@@ -1,5 +1,76 @@
-<p>This is the partial for view 2.</p>
-<p>
-  Showing of 'interpolate' filter:
-  {{ 'Current version is v%VERSION%.' | interpolate }}
-</p>
+<link rel="stylesheet" href="../view2/view2.css">
+
+
+<p style="height: 64px">This is the partial for view 2.</p>
+
+<div layout="row" ng-cloak>
+
+    <div layout="vertical">
+
+        <md-sidenav
+                class="md-sidenav-left"
+                md-component-id="left"
+                md-is-locked-open="$mdMedia('gt-sm')">
+            <md-toolbar>
+                <h1>Inquiries</h1>
+            </md-toolbar>
+
+            <div>
+                <!--<md-fab-speed-dial md-open="false" md-direction="up" class="md-fling md-fab-bottom-right">-->
+                    <!--<md-fab-trigger>-->
+                        <!--<md-button class="md-fab">-->
+                            <!--<ng-md-icon icon="menu"></ng-md-icon>-->
+                        <!--</md-button>-->
+                    <!--</md-fab-trigger>-->
+                    <!--<md-fab-actions>-->
+                        <!--<md-button class="md-fab md-raised md-mini" ng-click="showCreateInquiry($event)">-->
+                            <!--<ng-md-icon icon="add"></ng-md-icon>-->
+                            <!--<md-tooltip md-direction="left">New Inquiry</md-tooltip>-->
+                        <!--</md-button>-->
+                        <!--<md-button class="md-fab md-raised md-mini" ng-click="stateFilterInquiries('accepted')">-->
+                            <!--<ng-md-icon icon="done"></ng-md-icon>-->
+                            <!--<md-tooltip md-direction="left">Accepted</md-tooltip>-->
+                        <!--</md-button>-->
+                        <!--<md-button class="md-fab md-raised md-mini" ng-click="stateFilterInquiries('rejected')">-->
+                            <!--<ng-md-icon icon="close"></ng-md-icon>-->
+                            <!--<md-tooltip md-direction="left">Rejected</md-tooltip>-->
+                        <!--</md-button>-->
+                    <!--</md-fab-actions>-->
+                <!--</md-fab-speed-dial>-->
+            </div>
+
+        </md-sidenav>
+
+    </div>
+
+    <div layout="column" flex>
+        <p>
+            Showing of 'interpolate' filter:
+            {{ 'Current version is v%VERSION%.' | interpolate }}
+        </p>
+
+        <md-fab-speed-dial md-open="false" md-direction="up" class="md-fling md-fab-bottom-right">
+            <md-fab-trigger>
+                <md-button class="md-fab">
+                    <ng-md-icon icon="menu"></ng-md-icon>
+                </md-button>
+            </md-fab-trigger>
+            <md-fab-actions>
+                <md-button class="md-fab md-raised md-mini" ng-click="showCreateInquiry($event)">
+                    <ng-md-icon icon="add"></ng-md-icon>
+                    <md-tooltip md-direction="left">New Inquiry</md-tooltip>
+                </md-button>
+                <md-button class="md-fab md-raised md-mini" ng-click="stateFilterInquiries('accepted')">
+                    <ng-md-icon icon="done"></ng-md-icon>
+                    <md-tooltip md-direction="left">Accepted</md-tooltip>
+                </md-button>
+                <md-button class="md-fab md-raised md-mini" ng-click="stateFilterInquiries('rejected')">
+                    <ng-md-icon icon="close"></ng-md-icon>
+                    <md-tooltip md-direction="left">Rejected</md-tooltip>
+                </md-button>
+            </md-fab-actions>
+        </md-fab-speed-dial>
+
+    </div>
+
+</div>
