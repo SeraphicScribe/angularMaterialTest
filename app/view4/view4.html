@@ -1,0 +1,29 @@
+<!--<link rel="stylesheet" type="text/css" href="../../../matCss.css">-->
+<link rel="stylesheet" type="text/css" href="matCss.css">
+
+<div layout="row" ng-cloak ng-controller="View4Ctrl as vm">
+
+    <div ng-include="'view4/sidenav.html'" layout="vertical"></div>
+
+    <!--<div flex="30" style="background-color: #009688" layout="vertical">-->
+        <!--SideNav....-->
+    <!--</div>-->
+
+    <div layout="column" flex style="background-color: #3949ab">
+        <div ng-include="'view4/toolbar-header.html'" layout="vertical"></div>
+
+        <md-content flex style="background-color: silver">
+            Main Content
+        </md-content>
+    </div>
+
+    <!--<div layout="column" flex>-->
+    <!--<div ng-include="'../home/views/matToolbarHeader.html'"></div>-->
+
+    <!--<md-content flex style="background-color: silver">-->
+    <!--Main Content/Inquiry-->
+    <!--</md-content>-->
+    <!--</div>-->
+
+</div>
+
