@@ -30,5 +30,8 @@
     "angular-ui-router": "^0.3.1",
     "angular-cookies": "^1.5.7",
     "angular": "^1.5.7"
+  },
+  "resolutions": {
+    "angular": "1.6.4"
   }
 }
